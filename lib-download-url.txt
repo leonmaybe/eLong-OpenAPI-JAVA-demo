@@ -1,0 +1,2 @@
+http://code.alibabatech.com/mvn/releases/com/alibaba/fastjson/1.1.26/fastjson-1.1.26.jar
+http://jaxb.java.net/2.2.3/JAXB2_20101209.jar
