@@ -14,40 +14,43 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for EnumSortType.
+ * <p>Java class for EnumStateType.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="EnumSortType">
+ * &lt;simpleType name="EnumStateType">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Default"/>
- *     &lt;enumeration value="StarRankDesc"/>
- *     &lt;enumeration value="RateAsc"/>
- *     &lt;enumeration value="DistanceAsc"/>
- *     &lt;enumeration value="RateDesc"/>
+ *     &lt;enumeration value="HotelId"/>
+ *     &lt;enumeration value="HotelCode"/>
+ *     &lt;enumeration value="RoomId"/>
+ *     &lt;enumeration value="RoomTypeId"/>
+ *     &lt;enumeration value="RatePlanId"/>
+ *     &lt;enumeration value="RatePlanPolicy"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "EnumSortType")
+@XmlType(name = "EnumStateType")
 @XmlEnum
-public enum EnumSortType {
+public enum EnumStateType {
 
-    @XmlEnumValue("Default")
-    Default("Default"),
-    @XmlEnumValue("StarRankDesc")
-    StarRankDesc("StarRankDesc"),
-    @XmlEnumValue("RateAsc")
-    RateAsc("RateAsc"),
-    @XmlEnumValue("DistanceAsc")
-    DistanceAsc("DistanceAsc"),
-    @XmlEnumValue("RateDesc")
-    RateDesc("RateDesc");
+    @XmlEnumValue("HotelId")
+    HotelId("HotelId"),
+    @XmlEnumValue("HotelCode")
+    HotelCode("HotelCode"),
+    @XmlEnumValue("RoomId")
+    RoomId("RoomId"),
+    @XmlEnumValue("RoomTypeId")
+    RoomTypeId("RoomTypeId"),
+    @XmlEnumValue("RatePlanId")
+    RatePlanId("RatePlanId"),
+    @XmlEnumValue("RatePlanPolicy")
+    RatePlanPolicy("RatePlanPolicy");
     private final String value;
 
-    EnumSortType(String v) {
+    EnumStateType(String v) {
         value = v;
     }
 
@@ -55,8 +58,8 @@ public enum EnumSortType {
         return value;
     }
 
-    public static EnumSortType fromValue(String v) {
-        for (EnumSortType c: EnumSortType.values()) {
+    public static EnumStateType fromValue(String v) {
+        for (EnumStateType c: EnumStateType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

@@ -17,18 +17,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for DrrRule complex type.
+ * <p>Java class for ValidateInventoryResult complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="DrrRule">
+ * &lt;complexType name="ValidateInventoryResult">
  *   &lt;complexContent>
- *     &lt;extension base="{}BaseDrrRule">
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="DrrRuleId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="IsOK" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
- *     &lt;/extension>
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -36,30 +36,28 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DrrRule", propOrder = {
-    "drrRuleId"
+@XmlType(name = "ValidateInventoryResult", propOrder = {
+    "isOK"
 })
-public class DrrRule
-    extends BaseDrrRule
-{
+public class ValidateInventoryResult {
 
-    @JSONField(name = "DrrRuleId")
-    protected int drrRuleId;
+    @JSONField(name = "IsOK")
+    protected boolean isOK;
 
     /**
-     * Gets the value of the drrRuleId property.
+     * Gets the value of the isOK property.
      * 
      */
-    public int getDrrRuleId() {
-        return drrRuleId;
+    public boolean isIsOK() {
+        return isOK;
     }
 
     /**
-     * Sets the value of the drrRuleId property.
+     * Sets the value of the isOK property.
      * 
      */
-    public void setDrrRuleId(int value) {
-        this.drrRuleId = value;
+    public void setIsOK(boolean value) {
+        this.isOK = value;
     }
 
 }
