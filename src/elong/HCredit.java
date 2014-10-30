@@ -10,25 +10,21 @@ package elong;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement; 
-import java.util.List; 
-import com.alibaba.fastjson.annotation.JSONField;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ValidateCreditCardResponse complex type.
+ * <p>Java class for HCredit complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ValidateCreditCardResponse">
+ * &lt;complexType name="HCredit">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="IsValid" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="HasVerifyCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *       &lt;/sequence>
+ *       &lt;attribute name="HotelId" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="Credit" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -37,63 +33,60 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ValidateCreditCardResponse", propOrder = {
-    "isValid",
-    "hasVerifyCode"
-})
-public class ValidateCreditCardResponse {
+@XmlType(name = "HCredit")
+public class HCredit {
 
-    @JSONField(name = "IsValid")
-    protected String isValid;
-    @JSONField(name = "HasVerifyCode")
-    protected String hasVerifyCode;
+    @XmlAttribute(name = "HotelId")
+    protected String hotelId;
+    @XmlAttribute(name = "Credit")
+    protected String credit;
 
     /**
-     * Gets the value of the isValid property.
+     * Gets the value of the hotelId property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getIsValid() {
-        return isValid;
+    public String getHotelId() {
+        return hotelId;
     }
 
     /**
-     * Sets the value of the isValid property.
+     * Sets the value of the hotelId property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setIsValid(String value) {
-        this.isValid = value;
+    public void setHotelId(String value) {
+        this.hotelId = value;
     }
 
     /**
-     * Gets the value of the hasVerifyCode property.
+     * Gets the value of the credit property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getHasVerifyCode() {
-        return hasVerifyCode;
+    public String getCredit() {
+        return credit;
     }
 
     /**
-     * Sets the value of the hasVerifyCode property.
+     * Sets the value of the credit property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setHasVerifyCode(String value) {
-        this.hasVerifyCode = value;
+    public void setCredit(String value) {
+        this.credit = value;
     }
 
 }

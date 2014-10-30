@@ -19,21 +19,23 @@ import java.util.Date;
 
 
 /**
- * <p>Java class for ValidateInventoryCondition complex type.
+ * <p>Java class for BookingDataCondition complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ValidateInventoryCondition">
+ * &lt;complexType name="BookingDataCondition">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="HotelId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="HotelCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="RoomId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="RoomTypeId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Amount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="RatePlanId" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="ArrivalDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
  *         &lt;element name="DepartureDate" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         &lt;element name="PaymentType" type="{}EnumPaymentType"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -43,30 +45,37 @@ import java.util.Date;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ValidateInventoryCondition", propOrder = {
+@XmlType(name = "BookingDataCondition", propOrder = {
     "hotelId",
     "hotelCode",
+    "roomId",
     "roomTypeId",
-    "amount",
+    "ratePlanId",
     "arrivalDate",
-    "departureDate"
+    "departureDate",
+    "paymentType"
 })
-public class ValidateInventoryCondition {
+public class BookingDataCondition {
 
     @JSONField(name = "HotelId")
     protected String hotelId;
     @JSONField(name = "HotelCode")
     protected String hotelCode;
+    @JSONField(name = "RoomId")
+    protected String roomId;
     @JSONField(name = "RoomTypeId")
     protected String roomTypeId;
-    @JSONField(name = "Amount")
-    protected int amount;
+    @JSONField(name = "RatePlanId")
+    protected int ratePlanId;
     @JSONField(name = "ArrivalDate")
     @XmlSchemaType(name = "dateTime")
     protected java.util.Date arrivalDate;
     @JSONField(name = "DepartureDate")
     @XmlSchemaType(name = "dateTime")
     protected java.util.Date departureDate;
+    @JSONField(name = "PaymentType")
+    @XmlSchemaType(name = "string")
+    protected EnumPaymentType paymentType;
 
     /**
      * Gets the value of the hotelId property.
@@ -117,6 +126,30 @@ public class ValidateInventoryCondition {
     }
 
     /**
+     * Gets the value of the roomId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRoomId() {
+        return roomId;
+    }
+
+    /**
+     * Sets the value of the roomId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRoomId(String value) {
+        this.roomId = value;
+    }
+
+    /**
      * Gets the value of the roomTypeId property.
      * 
      * @return
@@ -141,19 +174,19 @@ public class ValidateInventoryCondition {
     }
 
     /**
-     * Gets the value of the amount property.
+     * Gets the value of the ratePlanId property.
      * 
      */
-    public int getAmount() {
-        return amount;
+    public int getRatePlanId() {
+        return ratePlanId;
     }
 
     /**
-     * Sets the value of the amount property.
+     * Sets the value of the ratePlanId property.
      * 
      */
-    public void setAmount(int value) {
-        this.amount = value;
+    public void setRatePlanId(int value) {
+        this.ratePlanId = value;
     }
 
     /**
@@ -202,6 +235,30 @@ public class ValidateInventoryCondition {
      */
     public void setDepartureDate(java.util.Date value) {
         this.departureDate = value;
+    }
+
+    /**
+     * Gets the value of the paymentType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EnumPaymentType }
+     *     
+     */
+    public EnumPaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    /**
+     * Sets the value of the paymentType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EnumPaymentType }
+     *     
+     */
+    public void setPaymentType(EnumPaymentType value) {
+        this.paymentType = value;
     }
 
 }

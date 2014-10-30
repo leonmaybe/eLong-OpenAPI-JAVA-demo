@@ -17,18 +17,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for HotelCity complex type.
+ * <p>Java class for HotelFacilities complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HotelCity">
+ * &lt;complexType name="HotelFacilities">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="HotelId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="CityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="SubCityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="GeneralAmenities" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="RecreationAmenities" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ServiceAmenities" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,90 +38,90 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HotelCity", propOrder = {
-    "hotelId",
-    "cityId",
-    "subCityId"
+@XmlType(name = "HotelFacilities", propOrder = {
+    "generalAmenities",
+    "recreationAmenities",
+    "serviceAmenities"
 })
-public class HotelCity {
+public class HotelFacilities {
 
-    @JSONField(name = "HotelId")
-    protected String hotelId;
-    @JSONField(name = "CityId")
-    protected String cityId;
-    @JSONField(name = "SubCityId")
-    protected String subCityId;
+    @JSONField(name = "GeneralAmenities")
+    protected String generalAmenities;
+    @JSONField(name = "RecreationAmenities")
+    protected String recreationAmenities;
+    @JSONField(name = "ServiceAmenities")
+    protected String serviceAmenities;
 
     /**
-     * Gets the value of the hotelId property.
+     * Gets the value of the generalAmenities property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getHotelId() {
-        return hotelId;
+    public String getGeneralAmenities() {
+        return generalAmenities;
     }
 
     /**
-     * Sets the value of the hotelId property.
+     * Sets the value of the generalAmenities property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setHotelId(String value) {
-        this.hotelId = value;
+    public void setGeneralAmenities(String value) {
+        this.generalAmenities = value;
     }
 
     /**
-     * Gets the value of the cityId property.
+     * Gets the value of the recreationAmenities property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCityId() {
-        return cityId;
+    public String getRecreationAmenities() {
+        return recreationAmenities;
     }
 
     /**
-     * Sets the value of the cityId property.
+     * Sets the value of the recreationAmenities property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCityId(String value) {
-        this.cityId = value;
+    public void setRecreationAmenities(String value) {
+        this.recreationAmenities = value;
     }
 
     /**
-     * Gets the value of the subCityId property.
+     * Gets the value of the serviceAmenities property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSubCityId() {
-        return subCityId;
+    public String getServiceAmenities() {
+        return serviceAmenities;
     }
 
     /**
-     * Sets the value of the subCityId property.
+     * Sets the value of the serviceAmenities property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSubCityId(String value) {
-        this.subCityId = value;
+    public void setServiceAmenities(String value) {
+        this.serviceAmenities = value;
     }
 
 }

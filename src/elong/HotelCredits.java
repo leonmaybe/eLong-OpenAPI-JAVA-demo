@@ -17,16 +17,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for RatePlanResult complex type.
+ * <p>Java class for HotelCredits complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="RatePlanResult">
+ * &lt;complexType name="HotelCredits">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Hotels" type="{}ArrayOfHotelRatePlan" minOccurs="0"/>
+ *         &lt;element name="HCredits" type="{}ArrayOfHCredit" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RatePlanResult", propOrder = {
-    "hotels"
+@XmlType(name = "HotelCredits", propOrder = {
+    "hCredits"
 })
-public class RatePlanResult {
+public class HotelCredits {
 
-    @JSONField(name = "Hotels")
-    protected List<HotelRatePlan> hotels;
+    @JSONField(name = "HCredits")
+    protected List<HCredit> hCredits;
 
     /**
-     * Gets the value of the hotels property.
+     * Gets the value of the hCredits property.
      * 
      * @return
      *     possible object is
-     *     {@link List<HotelRatePlan> }
+     *     {@link List<HCredit> }
      *     
      */
-    public List<HotelRatePlan> getHotels() {
-        return hotels;
+    public List<HCredit> getHCredits() {
+        return hCredits;
     }
 
     /**
-     * Sets the value of the hotels property.
+     * Sets the value of the hCredits property.
      * 
      * @param value
      *     allowed object is
-     *     {@link List<HotelRatePlan> }
+     *     {@link List<HCredit> }
      *     
      */
-    public void setHotels(List<HotelRatePlan> value) {
-        this.hotels = value;
+    public void setHCredits(List<HCredit> value) {
+        this.hCredits = value;
     }
 
 }
