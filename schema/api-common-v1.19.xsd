@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EnumIdType" type="EnumIdType" />
+  <xs:simpleType name="EnumIdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IdentityCard" />
+      <xs:enumeration value="Passport" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="OfficerCertificate" />
+      <xs:enumeration value="PoliceID" />
+      <xs:enumeration value="ReentryPermit" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumLocal" type="EnumLocal" />
+  <xs:simpleType name="EnumLocal">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="zh_CN" />
+      <xs:enumeration value="en_US" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumMemberLevel" type="EnumMemberLevel" />
+  <xs:simpleType name="EnumMemberLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumOrderContactType" type="EnumOrderContactType" />
+  <xs:simpleType name="EnumOrderContactType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoNeed" />
+      <xs:enumeration value="Customer" />
+      <xs:enumeration value="Proxy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CommonErrorCode" nillable="true" type="CommonErrorCode" />
+  <xs:complexType name="CommonErrorCode" />
+</xs:schema>
