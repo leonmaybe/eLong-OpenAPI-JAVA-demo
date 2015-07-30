@@ -1,3 +1,8 @@
+#!/bin/bash
+
+xjc -p elong api-comm*.xsd
+xjc -p elong hotel-v*.xsd
+
 cd elong
 #Linux
 
@@ -29,4 +34,7 @@ import java.util.List; \
 import com.alibaba.fastjson.annotation.JSONField;/g' *.java
 
 
-
+ cp -f  *.java ../eLong-OpenAPI-JAVA-demo/src/elong/
+ rm -rf elong
+ 
+ echo "Successfully done!"
