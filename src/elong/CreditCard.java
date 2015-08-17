@@ -106,7 +106,7 @@ public class CreditCard {
      *     {@link String }
      *     
      */
-    public String getCVV() {
+    public String getCvv() {
         return cvv;
     }
 
@@ -118,7 +118,7 @@ public class CreditCard {
      *     {@link String }
      *     
      */
-    public void setCVV(String value) {
+    public void setCvv(String value) {
         this.cvv = value;
     }
 
