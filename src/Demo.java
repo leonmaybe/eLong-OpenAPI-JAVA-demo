@@ -183,7 +183,10 @@ public class Demo {
 	    		@Override
 	            public boolean verify(String hostname, SSLSession session)
 	            {
-	                if (hostname.equals("211.151.230.212") || hostname.equals("192.168.9.51"))
+	                if (hostname.equals("121.79.134.45") 
+	                	|| hostname.equals("api.test.lohoo.com") 
+	                	|| hostname.equals("211.151.235.157") 
+	                	|| hostname.equals("192.168.9.51"))
 	                    return true;
 	                return false;
 	            }
