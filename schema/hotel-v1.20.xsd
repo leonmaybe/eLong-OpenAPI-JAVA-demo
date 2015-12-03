@@ -1,5 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CouponResult" nillable="true" type="CouponResult" />
+  <xs:complexType name="CouponResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Coupons" type="ArrayOfCouponItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCouponItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CouponItem" nillable="true" type="CouponItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CouponItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="HotelCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomTypeId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RatePlanId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ChannelCodes" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PromotionId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PriceList" type="ArrayOfCouponPrice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCouponPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CouponPrice" nillable="true" type="CouponPrice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CouponPrice">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EndDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CouponIncrResult" nillable="true" type="CouponIncrResult" />
+  <xs:complexType name="CouponIncrResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Coupons" type="ArrayOfCouponIncrItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCouponIncrItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CouponIncrItem" nillable="true" type="CouponIncrItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CouponIncrItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CouponItem">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="LastId" type="xs:long" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ChangeTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CouponItem" nillable="true" type="CouponItem" />
+  <xs:element name="CouponIncrItem" nillable="true" type="CouponIncrItem" />
+  <xs:element name="CouponPrice" nillable="true" type="CouponPrice" />
+  <xs:element name="CouponValidateCondition" nillable="true" type="CouponValidateCondition" />
+  <xs:complexType name="CouponValidateCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="HotelCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomTypeId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RatePlanId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PromotionIds" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CheckInDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CheckOutDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CouponValidateResult" nillable="true" type="CouponValidateResult" />
+  <xs:complexType name="CouponValidateResult">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CouponAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="CommentSummaryCondition" nillable="true" type="CommentSummaryCondition" />
   <xs:complexType name="CommentSummaryCondition">
     <xs:sequence>
@@ -258,6 +332,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Suppliers" type="ArrayOfSupplier" />
       <xs:element minOccurs="0" maxOccurs="1" name="ServiceRank" type="ServiceRank" />
       <xs:element minOccurs="1" maxOccurs="1" name="HasCoupon" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HotelStatus" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="FacilitiesV2" type="HotelFacilities" />
       <xs:element minOccurs="0" maxOccurs="1" name="Themes" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="RoomTotalAmount" type="xs:string" />
@@ -290,6 +365,7 @@
     <xs:attribute name="HotelCode" type="xs:string" />
     <xs:attribute name="WeekendStart" type="xs:string" />
     <xs:attribute name="WeekendEnd" type="xs:string" />
+    <xs:attribute name="InvokeType" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="HelpFulTip">
     <xs:simpleContent>
@@ -537,7 +613,6 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="CheckinDate" />
       <xs:enumeration value="BookingDate" />
-      <xs:enumeration value="StayDate" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="HotelGiftHourTypeEnum">
@@ -2020,8 +2095,6 @@
           <xs:element minOccurs="0" maxOccurs="1" name="Invoice" type="Invoice" />
           <xs:element minOccurs="0" maxOccurs="1" name="CreditCard" type="CreditCard" />
           <xs:element minOccurs="1" maxOccurs="1" name="IsForceGuarantee" nillable="true" type="xs:boolean" />
-          <xs:element minOccurs="1" maxOccurs="1" name="MustVouchInRuleType" nillable="true" type="xs:int" />
-          <xs:element minOccurs="1" maxOccurs="1" name="IsNewPaymentFlow" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2094,6 +2167,13 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="CouponInfo" nillable="true" type="CouponInfo" />
+  <xs:complexType name="CouponInfo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PromotionIds" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:element name="CreateOrderResult" nillable="true" type="CreateOrderResult" />
   <xs:complexType name="CreateOrderResult">
     <xs:sequence>
@@ -2157,6 +2237,15 @@
   <xs:complexType name="HotelIdsCondition">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="HotelIds" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HotelIdCondition" nillable="true" type="HotelIdCondition" />
+  <xs:complexType name="HotelIdCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="HotelId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HotelCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RoomTypeId" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RatePlanId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OrderSummary" nillable="true" type="OrderSummary" />
