@@ -17,18 +17,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for HotelCity complex type.
+ * <p>Java class for HourlyRoomInfo complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="HotelCity">
+ * &lt;complexType name="HourlyRoomInfo">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="HotelId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="CityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="SubCityId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="EarliestArrivalTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="LastestArrivalTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="MaxStayTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,90 +38,90 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "HotelCity", propOrder = {
-    "hotelId",
-    "cityId",
-    "subCityId"
+@XmlType(name = "HourlyRoomInfo", propOrder = {
+    "earliestArrivalTime",
+    "lastestArrivalTime",
+    "maxStayTime"
 })
-public class HotelCity {
+public class HourlyRoomInfo {
 
-    @JSONField(name = "HotelId")
-    protected String hotelId;
-    @JSONField(name = "CityId")
-    protected String cityId;
-    @JSONField(name = "SubCityId")
-    protected String subCityId;
+    @JSONField(name = "EarliestArrivalTime")
+    protected String earliestArrivalTime;
+    @JSONField(name = "LastestArrivalTime")
+    protected String lastestArrivalTime;
+    @JSONField(name = "MaxStayTime")
+    protected String maxStayTime;
 
     /**
-     * Gets the value of the hotelId property.
+     * Gets the value of the earliestArrivalTime property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getHotelId() {
-        return hotelId;
+    public String getEarliestArrivalTime() {
+        return earliestArrivalTime;
     }
 
     /**
-     * Sets the value of the hotelId property.
+     * Sets the value of the earliestArrivalTime property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setHotelId(String value) {
-        this.hotelId = value;
+    public void setEarliestArrivalTime(String value) {
+        this.earliestArrivalTime = value;
     }
 
     /**
-     * Gets the value of the cityId property.
+     * Gets the value of the lastestArrivalTime property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCityId() {
-        return cityId;
+    public String getLastestArrivalTime() {
+        return lastestArrivalTime;
     }
 
     /**
-     * Sets the value of the cityId property.
+     * Sets the value of the lastestArrivalTime property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCityId(String value) {
-        this.cityId = value;
+    public void setLastestArrivalTime(String value) {
+        this.lastestArrivalTime = value;
     }
 
     /**
-     * Gets the value of the subCityId property.
+     * Gets the value of the maxStayTime property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSubCityId() {
-        return subCityId;
+    public String getMaxStayTime() {
+        return maxStayTime;
     }
 
     /**
-     * Sets the value of the subCityId property.
+     * Sets the value of the maxStayTime property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSubCityId(String value) {
-        this.subCityId = value;
+    public void setMaxStayTime(String value) {
+        this.maxStayTime = value;
     }
 
 }
