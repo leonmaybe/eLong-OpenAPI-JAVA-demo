@@ -2180,7 +2180,8 @@
           <xs:element minOccurs="0" maxOccurs="1" name="OrderRooms" type="ArrayOfCreateOrderRoom" />
           <xs:element minOccurs="0" maxOccurs="1" name="Invoice" type="Invoice" />
           <xs:element minOccurs="0" maxOccurs="1" name="CreditCard" type="CreditCard" />
-          <xs:element minOccurs="1" maxOccurs="1" name="IsForceGuarantee" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="1" maxOccurs="1" name="IsCreateOrderOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OrderValidation" type="OrderValidation" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2253,14 +2254,6 @@
       <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CouponInfo" nillable="true" type="CouponInfo" />
-  <xs:complexType name="CouponInfo">
-    <xs:sequence>
-      <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:decimal" />
-      <xs:element minOccurs="0" maxOccurs="1" name="PromotionIds" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="OrderValidation" nillable="true" type="OrderValidation" />
   <xs:complexType name="OrderValidation">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="DateBreakFastList" type="ArrayOfDateBreakFast" />
@@ -2280,6 +2273,14 @@
       <xs:element minOccurs="1" maxOccurs="1" name="BreakFastCount" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:element name="CouponInfo" nillable="true" type="CouponInfo" />
+  <xs:complexType name="CouponInfo">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PromotionIds" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderValidation" nillable="true" type="OrderValidation" />
   <xs:element name="DateBreakFast" nillable="true" type="DateBreakFast" />
   <xs:element name="CreateOrderResult" nillable="true" type="CreateOrderResult" />
   <xs:complexType name="CreateOrderResult">
