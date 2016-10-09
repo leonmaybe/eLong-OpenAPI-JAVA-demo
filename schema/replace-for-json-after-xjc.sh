@@ -11,13 +11,20 @@ cd elong
 rm -f ArrayOf*.java
 rm -f ObjectFactory.java
 
+sed -i '' -e 's/ArrayOfInt/ArrayOfInteger/g' *.java
+
+
 sed -i '' -e 's/javax\.xml\.datatype\.XMLGregorianCalendar/java.util.Date/g' *.java
 sed -i '' -e 's/XMLGregorianCalendar/java.util.Date/g' *.java
 
 sed -i '' -e 's/, required = true//g' *.java
+sed -i '' -e 's/@JSONField(required = true)//g' *.java
 sed -i '' -e 's/, nillable = true//g' *.java
 sed -i '' -e 's/, type = Boolean.class//g' *.java
 sed -i '' -e 's/, type = Integer.class//g' *.java
+sed -i '' -e 's/, type = Long.class//g' *.java
+
+
 
 sed -i '' -e 's/@XmlElement/@JSONField/g' *.java
 
@@ -34,7 +41,9 @@ import java.util.List; \
 import com.alibaba.fastjson.annotation.JSONField;/g' *.java
 
 
- cp -f  *.java ../eLong-OpenAPI-JAVA-demo/src/elong/
- rm -rf elong
+ cp -f  *.java  ../src/elong/
  
- echo "Successfully done!"
+ 
+ echo ""
+ echo ""
+ echo "======  Successfully done!  ============"

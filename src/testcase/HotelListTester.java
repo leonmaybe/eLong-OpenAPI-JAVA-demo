@@ -31,7 +31,7 @@ public class HotelListTester extends BaseTester<HotelListCondition, HotelListRes
 			condition.setDepartureDate(date2);
 			condition.setCityId("0101");
 			condition.setPaymentType(elong.EnumPaymentType.SelfPay);
-			condition.setProductProperties(elong.EnumProductProperty.All);
+			condition.setProductProperties("All");
 			condition.setSort(elong.EnumSortType.Default);
 		
 		
